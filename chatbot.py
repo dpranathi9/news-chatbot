@@ -21,7 +21,7 @@ def get_top_headlines(api_key):
     return [(a["title"], a["url"]) for a in articles]
     
 if name:
-    greeting = f"Hi {name}!" if name.lower() != "friends" else "Hi friends!"
+    greeting = f"Welcome to the news chatbot"
     st.subheader(greeting)
 
     st.write("Here are today's top news headlines:")
