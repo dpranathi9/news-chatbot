@@ -1,6 +1,15 @@
 import streamlit as st
 import requests
 
+# Get the query parameters from the URL
+query_params = st.experimental_get_query_params()
+
+# Extract the name from the URL if present
+name = query_params.get("name", ["Friend"])[0]  # default to "Friend"
+
+# Greet the user
+st.title(f"Hi {name}! 👋 Welcome to the News Chatbot")
+
 # NewsAPI Key
 NEWS_API_KEY = "bf6fdce177a740e19ed32670ec9cd89b"  # Replace this with your actual API key
 
