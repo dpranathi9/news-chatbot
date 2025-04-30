@@ -8,7 +8,7 @@ query_params = st.experimental_get_query_params()
 name = query_params.get("name", ["Friend"])[0]  # default to "Friend"
 
 # Greet the user
-st.title(f"Hi {name}! 👋 Welcome to the News Chatbot")
+st.title(f"Hi 👋 {name}! Welcome to the Daily News Chatbot")
 
 # NewsAPI Key
 NEWS_API_KEY = "bf6fdce177a740e19ed32670ec9cd89b"  # Replace this with your actual API key
@@ -19,11 +19,7 @@ def get_top_headlines(api_key):
     data = response.json()
     articles = data.get("articles", [])[:5]
     return [(a["title"], a["url"]) for a in articles]
-
-st.title("Daily News Chatbot")
-
-name = st.text_input("Enter your name (or type 'friends')")
-
+    
 if name:
     greeting = f"Hi {name}!" if name.lower() != "friends" else "Hi friends!"
     st.subheader(greeting)
